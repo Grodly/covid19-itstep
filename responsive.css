@@ -14,4 +14,8 @@
     main .container .right {
         width: 100% !important;
     }
+    .topCountries,
+    .yourCountry {
+        font-size: 13px;
+    }
 }
