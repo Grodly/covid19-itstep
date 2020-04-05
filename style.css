@@ -55,6 +55,10 @@ main .container {
     margin: 20px 0;
 }
 
+main h1 {
+    color: #363636;
+}
+
 
 /* What Is Covid-19? */
 
@@ -110,30 +114,28 @@ main hr {
 }
 
 
-/* -------------- */
+/* statistics */
 
-main h1 {
-    color: #363636;
+table,
+td,
+th {
+    border: 1px solid #ddd;
+    text-align: left;
 }
 
-main .leftSide {
-    flex: 1;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-main .rightSide {
-    flex: 1;
-}
-
-.topCountries,
-.yourCountry {
-    border: solid #363636 2px;
-    margin-bottom: 20px;
-}
-
-.topCountries table,
-.yourCountry table {
+th,
+td {
     padding: 10px;
 }
+
+
+/* footer */
 
 footer {
     margin-top: 30px;

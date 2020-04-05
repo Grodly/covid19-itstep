@@ -1,9 +1,9 @@
 class CovidStatistics {
     constructor() {
         //this.getLocation();
-        this.Statistic();
-        this.GetCoronaInfo("Georgia")
+        // this.Statistic();
         this.getStatsItems();
+        this.GetCoronaInfo("Georgia")
     }
 
     getStatsItems() {
@@ -18,23 +18,24 @@ class CovidStatistics {
             var topFive = new Array();
             var maxValue = 0
 
-            var end = 0;
-            while (end != 4) {
+            for (var i = 0; i < 5; i++) {
                 datas.locations.forEach(element => {
-                    for (var i = 0; i < topFive.length; i++) {
-                        if (topFive[i] != null && topFive[i] != element.latest.confirmed) {
+                    if (i > 0) {
+                        if (topFive[i - 1] > element.latest.confirmed) {
                             if (maxValue < element.latest.confirmed) {
                                 maxValue = element.latest.confirmed;
                             }
                         }
+                    } else if (maxValue < element.latest.confirmed) {
+                        maxValue = element.latest.confirmed;
                     }
                 });
-                topFive.push(maxValue);
-                end++;
+                topFive[i] = maxValue;
+                maxValue = 0;
             }
 
-            datas.locations.forEach(element => {
-                for (var i = 0; i < topFive.length; i++) {
+            for (var i = 0; i < 5; i++) {
+                datas.locations.forEach(element => {
                     if (topFive[i] == element.latest.confirmed) {
                         tag.innerHTML += `<tr>
                                             <td>${element.country}</td>
@@ -43,8 +44,8 @@ class CovidStatistics {
                                             <td>${element.latest.recovered}</td>
                                         </tr>`
                     }
-                }
-            });
+                });
+            }
         }
         xmlRequest.send();
     }
@@ -58,7 +59,7 @@ class CovidStatistics {
         xmlRequest.onloadend = function() {
             var datas = JSON.parse(xmlRequest.responseText);
             var corona = (datas.locations.filter(o => o.country.toLowerCase() == coutryName.toLowerCase()))[0];
-            tag.innerHTML = `<tr>
+            tag.innerHTML += `<tr>
                                 <td>${corona.country}</td>
                                 <td>${corona.latest.confirmed}</td>
                                 <td>${corona.latest.deaths}</td>
