@@ -10,6 +10,9 @@
     main .container .about h1 {
         font-size: 33px;
     }
+    main .container .left .carousel {
+        margin-bottom: 15px;
+    }
     main .container .left,
     main .container .right {
         width: 100% !important;
