@@ -1,0 +1,17 @@
+@media only screen and (max-width: 750px) {
+    .navbar,
+    main {
+        margin: 0 5px !important;
+    }
+    /* What Is Covid-19? */
+    main .container .about {
+        text-align: center;
+    }
+    main .container .about h1 {
+        font-size: 33px;
+    }
+    main .container .left,
+    main .container .right {
+        width: 100% !important;
+    }
+}
