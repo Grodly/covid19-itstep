@@ -1,7 +1,5 @@
 class CovidStatistics {
     constructor() {
-        //this.getLocation();
-        // this.Statistic();
         this.getStatsItems();
         this.GetCoronaInfo("Georgia")
     }
@@ -67,109 +65,5 @@ class CovidStatistics {
                             </tr>`
         }
         xmlRequest.send();
-    }
-
-    //diagrama
-    getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        }
-    }
-
-    showPosition(position) {
-        var coordinates = {
-            Latitude: position.coords.latitude,
-            Longtitude: position.coords.longitude
-        };
-        SubscribeGeoLocation(coordinates);
-    }
-
-    SubscribeGeoLocation(obj) {
-        console.log(obj);
-        GetCountryInfo(obj);
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: obj.Latitude, lng: obj.Longtitude },
-            zoom: 15
-        });
-    }
-
-    GetCountryInfo(obj) {
-        var api = `http://api.geonames.org/countryCodeJSON?lat=${obj.Latitude}&lng=${obj.Longtitude}&username=beta`
-        var xmlRequest = new XMLHttpRequest();
-        xmlRequest.open("GET", api, true);
-        xmlRequest.onloadend = function() {
-            var obj = JSON.parse(xmlRequest.responseText);
-            GetCoronaInfo(obj.countryName);
-            console.log(obj);
-        }
-
-        xmlRequest.send();
-    }
-
-    map;
-    initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 8
-        });
-    }
-
-    Statistic() {
-        var self = this;
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://covid-193.p.rapidapi.com/statistics");
-        xhr.setRequestHeader("x-rapidapi-host", "covid-193.p.rapidapi.com");
-        xhr.setRequestHeader("x-rapidapi-key", "77b0e22cf0mshd110ba1b8435464p144b8fjsn1b4bda726691");
-        xhr.onloadend = function() {
-            var data = JSON.parse(xhr.responseText);
-            console.log(data);
-            var info = data.response.filter(o => o.cases.total > 2000).map(o => {
-                return {
-                    label: o.country,
-                    value: `${o.cases.total}`
-                }
-            });
-            console.log(info);
-            self.createCoronaChart(info);
-        }
-        xhr.send();
-    }
-
-    createCoronaChart(datas) {
-        // Create a JSON object to store the chart configurations
-        var chartConfigs = {
-            //Specify the chart type
-            type: "column2d",
-            //Set the container object
-            renderAt: "chart-container",
-            //Specify the width of the chart
-            width: "100%",
-            //Specify the height of the chart
-            height: "800",
-            //Set the type of data
-            dataFormat: "json",
-            dataSource: {
-                chart: {
-                    //Set the chart caption
-                    caption: "Covid-19",
-                    //Set the chart subcaption
-                    subCaption: "In MMbbl = One Million barrels",
-                    //Set the x-axis name
-                    xAxisName: "Country",
-                    //Set the y-axis name
-                    yAxisName: "Reserves (MMbbl)",
-                    numberSuffix: "K",
-                    //Set the theme for your chart
-                    theme: "fusion"
-                },
-                // Chart Data from Step 2
-                data: datas
-            }
-        };
-
-        FusionCharts.ready(function() {
-            var fusioncharts = new FusionCharts(chartConfigs);
-            fusioncharts.render();
-        });
     }
 }
