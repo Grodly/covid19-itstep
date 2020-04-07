@@ -139,6 +139,18 @@ td {
     padding: 10px;
 }
 
+.hot-line {
+    margin-top: 50px;
+    border: double #363636 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hot-line h4 {
+    margin: 10px;
+}
+
 .form-box label {
     margin-top: 7px;
     margin-left: 15px;
