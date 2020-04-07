@@ -145,7 +145,7 @@ td {
 }
 
 .form-box select {
-    width: 300px;
+    width: 60%;
 }
 
 .form-box span {
@@ -160,6 +160,10 @@ td {
 
 .result {
     margin-left: 5px;
+}
+
+.right .container {
+    justify-content: center;
 }
 
 
