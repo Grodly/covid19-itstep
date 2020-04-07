@@ -50,10 +50,10 @@ function CalculateDeathChanse() {
     }
 
     //gender
-    if (gender.value == "მამრობითი") {
-        genderRate = 20;
-    } else if (gender.value == "მდედრობითი") {
+    if (gender.value == "მდედრობითი") {
         genderRate = 10;
+    } else if (gender.value == "მამრობითი") {
+        genderRate = 20;
     }
 
     //climate
