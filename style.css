@@ -76,16 +76,22 @@ main .container .right video {
     overflow: hidden;
 }
 
-main .carousel-inner {
+main .carousel {
     width: 90%;
-    height: 300px !important;
+    height: 500px;
     background-color: rgba(54, 54, 54, .7);
     border-radius: 7px;
     margin: auto;
+    overflow: hidden;
+}
+
+main .carousel-item {
+    overflow: hidden;
 }
 
 main .carousel-item img {
     margin: auto;
+    object-fit: cover;
 }
 
 

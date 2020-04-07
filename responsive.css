@@ -21,4 +21,7 @@
     .yourCountry {
         font-size: 13px;
     }
+    main .carousel {
+        height: 155px !important;
+    }
 }
