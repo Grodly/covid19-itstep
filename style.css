@@ -139,6 +139,29 @@ td {
     padding: 10px;
 }
 
+.form-box label {
+    margin-top: 7px;
+    margin-left: 15px;
+}
+
+.form-box select {
+    width: 300px;
+}
+
+.form-box span {
+    margin-bottom: 10px !important;
+}
+
+.form-box {
+    display: flex;
+    justify-content: space space-between;
+    margin-bottom: 10px;
+}
+
+.result {
+    margin-left: 5px;
+}
+
 
 /* footer */
 

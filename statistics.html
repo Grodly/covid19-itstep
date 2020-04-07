@@ -40,7 +40,7 @@
     </header>
     <main>
         <div class="container">
-            <div class="leftSide">
+            <div class="about">
                 <h1>Top 5 ქვეყანა</h1>
                 <div>
                     <table data-aos="zoom-in" class="topCountries">
@@ -65,10 +65,65 @@
                     </table>
                 </div>
             </div>
-            <div class="rightSide ">
-            </div>
-            <div id="coronaChart ">
+            <div class="right">
+                <div data-aos="fade-left" class="about">
+                    <h1>გარდაცვალების რისკი</h1>
+                    <p>შეიყვანეთ მონაცემები</p>
 
+                    <div class="form-box">
+                        <select class="form-control" id="age" onchange="CalculateDeathChanse();">
+                            <option>0-19</option>
+                            <option>20-39</option>
+                            <option>40-59</option>
+                            <option>60-89</option>
+                            <option>90+</option>
+                        </select>
+                        <label for="age">ასაკი</label>
+                    </div>
+                    <div class="form-box">
+                        <select class="form-control" id="social-contact" onchange="CalculateDeathChanse();">
+                            <option>არ მაქვს კონტაქტი</option>
+                            <option>ნაკლებად მაქვს კონტაქტი</option>
+                            <option>მაქვს კონტაქტი</option>
+                        </select>
+                        <label for="social-contact">სოციალური კონტაქტი</label>
+                    </div>
+                    <div class="form-box">
+                        <select class="form-control" id="gender" onchange="CalculateDeathChanse();">
+                            <option>მამრობითი</option>
+                            <option>მდედრობითი</option>
+                        </select>
+                        <label for="gender">სქესი</label>
+                    </div>
+                    <div class="form-box">
+                        <select class="form-control" id="climate" onchange="CalculateDeathChanse();">
+                            <option>ცხელი</option>
+                            <option>ცივი</option>
+                        </select>
+                        <label for="climate">კლიმატი</label>
+                    </div>
+                    <div class="form-box">
+                        <select class="form-control" id="hygiene" onchange="CalculateDeathChanse();">
+                            <option>ვიცავ</option>
+                            <option>ნაკლებად ვიცავ</option>
+                            <option>არ ვიცავ</option>
+                        </select>
+                        <label for="hygiene">ჰიგიენა</label>
+                    </div>
+                    <div class="form-box">
+                        <select class="form-control" id="other-illness" onchange="CalculateDeathChanse();">
+                            <option>არ მაქვს</option>
+                            <option>სუსტად</option>
+                            <option>ძლიერად</option>
+                        </select>
+                        <label for="other-illness">სხვა დაავადებები</label>
+                    </div>
+
+                    <div class="container">
+                        <h3>პროცენტული მაჩვენებელი:</h3>
+                        <h3 class="result">ara%</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -82,6 +137,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
     <script src="./js/CovidStats.component.js "></script>
+    <script src="./js/main.js"></script>
 
     <script>
         var covidStatistics = new CovidStatistics();
