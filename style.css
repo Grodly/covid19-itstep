@@ -74,6 +74,7 @@ main .container .right video {
     border-radius: 7px;
     height: 100%;
     overflow: hidden;
+    outline: none;
 }
 
 main .carousel {
@@ -83,7 +84,7 @@ main .carousel {
     border-radius: 7px;
     margin: auto;
     overflow: hidden;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 main .carousel-item {
@@ -142,14 +143,13 @@ td {
 
 .hot-line {
     margin-top: 50px;
-    border: double #363636 1px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    color: #ff6b6b;
 }
 
 .right.rightSide {
-    margin-left: 60px;
+    margin-left: 100px;
 }
 
 .hot-line h4 {
@@ -163,6 +163,7 @@ td {
 
 .form-box select {
     width: 60%;
+    height: 45px;
 }
 
 .form-box span {
@@ -181,6 +182,12 @@ td {
 
 .right .container {
     justify-content: center;
+}
+
+.persent-calc {
+    margin-top: 63px;
+    display: flex;
+    color: #ff6b6b;
 }
 
 
