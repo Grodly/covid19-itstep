@@ -6,6 +6,7 @@
     /* What Is Covid-19? */
     main .container .about {
         text-align: center;
+        width: 100%;
     }
     main .container .about h1 {
         font-size: 33px;
@@ -23,5 +24,9 @@
     }
     main .carousel {
         height: 155px !important;
+    }
+    .right.rightSide {
+        margin-left: 0 !important;
+        margin-top: 30px;
     }
 }
